@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Content1.qml</file>
+        <file>Dialogs.qml</file>
+        <file>icons/complete.png</file>
+        <file>icons/pen.png</file>
+        <file>icons/rect.png</file>
+        <file>icons/revoke.png</file>
+        <file>icons/save.png</file>
+        <file>icons/circular-arrow-shape.png</file>
+        <file>icons/color.png</file>
+        <file>icons/draw-ellipse.png</file>
+        <file>icons/draw-text.png</file>
+        <file>icons/fill-color.png</file>
+        <file>icons/fontsize.png</file>
+        <file>icons/kdenlive-composite.png</file>
+        <file>icons/paint.png</file>
+        <file>icons/rectangle.png</file>
+        <file>icons/shapes.svg</file>
+        <file>icons/text.svg</file>
+        <file>icons/textcolor.png</file>
+        <file>icons/tools-wizard.svg</file>
+        <file>icons/width.png</file>
+        <file>Content2.qml</file>
+        <file>icons/undo.png</file>
+        <file>CutImageRect.qml</file>
+        <file>CutBorder.qml</file>
+        <file>FocusRect.qml</file>
+        <file>RectMove.qml</file>
+        <file>icons/cut.png</file>
+        <file>icons/line.png</file>
+        <file>icons/clear.png</file>
+    </qresource>
+</RCC>
