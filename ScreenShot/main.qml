@@ -24,22 +24,26 @@ ApplicationWindow{
     }
 
     statusBar:StatusBar{
-        //height: 40
+        id: statusBar1
+        height: row.height + 10
+
         RowLayout{
             id:row
             width:parent.width
-
+            anchors.verticalCenter: parent.verticalCenter
             RowLayout{
                 id:row1
                 Layout.alignment: Qt.AlignLeft
                 Button{
                     Layout.preferredWidth: 100
                     text:qsTr("帮助(H)")
+                    iconName: "system-help"
                     iconSource: "./icons/help.png"
                     menu:Menu{
                         MenuItem{
                             id:btn_help
                             text: qsTr("这是什么?(?)");
+                            iconName: "help-faq"
                             iconSource: "./icons/help.png"
                             shortcut: Shortcut{
                                 sequence: "Ctrl+?"
@@ -52,6 +56,7 @@ ApplicationWindow{
                         MenuItem{
                             id:btn_error
                             text: qsTr("报告程序缺陷(Tab)...");
+                            iconName: "help-contents"
                             iconSource: "./icons/face-sad.png"
                             shortcut: Shortcut{
                                 sequence: "Ctrl+Tab"
@@ -63,6 +68,7 @@ ApplicationWindow{
                         MenuItem{
                             id:btn_about
                             text: qsTr("关于麒麟截屏(H)");
+                            iconName: "help-about"
                             iconSource: "./icons/logo.png"
                             shortcut: Shortcut{
                                 sequence: "Ctrl+Shift+H"
@@ -77,6 +83,7 @@ ApplicationWindow{
                 Button{
                     id:btn_open
                     text: qsTr("打开本地图片(O)")
+                    iconName: "document-open"
                     iconSource: "./icons/open.png"
                     Shortcut{
                         sequence: "Ctrl+O"
@@ -95,6 +102,7 @@ ApplicationWindow{
                 Button{
                     id:btn
                     iconSource: "./icons/edit.png"
+                    iconName: "borderpainter"
                     text: qsTr("注释(E)")
                     Shortcut{
                         sequence: "Ctrl+E"
@@ -130,6 +138,7 @@ ApplicationWindow{
                 Button{
                     id:btn_1
                     text:qsTr("打印(P)")
+                    iconName: "printer"
                     iconSource: "./icons/print.png"
                     Shortcut{
                         sequence: "Ctrl+P"
@@ -143,12 +152,13 @@ ApplicationWindow{
                 Button{
                     id:btn_2
                     iconSource: "./icons/send.png"
+                    iconName: "send-to-symbolic"
                     text: qsTr("导出")
                     menu:Menu{
                         Menu{
                             title:qsTr("分享")
                             //点击分享 图片会自动保存至剪贴板 然后分享
-                            iconName:"document-save"
+
                             MenuItem{
                                 id:btn_qq
                                 text:qsTr("发送到QQ")
@@ -215,6 +225,7 @@ ApplicationWindow{
                 Button{
                     id:btn_4
                     iconSource: "./icons/clip.png"
+                    iconName: "edit-copy"
                     text: qsTr("复制到剪贴板(C)")
                     Shortcut{
                         sequence: "Ctrl+Shift+C"
@@ -232,11 +243,13 @@ ApplicationWindow{
                 Button{
                     id:btn_3
                     text:qsTr("保存(S)")
+                    iconName: "document-save"
                     iconSource:"./icons/document-save.png"
                     menu:Menu{
                         id:menu_4
                         MenuItem{
                             text:qsTr("保存(S)")
+                            iconName:"document-save"
                             iconSource:"./icons/document-save.png"
                             shortcut:  Shortcut{
                                 sequence: "Ctrl+S"
@@ -253,6 +266,7 @@ ApplicationWindow{
                         MenuItem{
                             id:save_as
                             text:qsTr("另存为")
+                            iconName:"document-save-as"
                             iconSource:"./icons/document-save-as.png"
                             shortcut: Shortcut{
                                 sequence: "Ctrl+Shift+S"

@@ -2,7 +2,7 @@
 
 Area_Record::Area_Record(QWidget *parent) : QDialog(parent)
 {
-    setObjectName("AreaArea_Record");
+    setObjectName(tr("AreaArea_Record"));
     resize(800, 600);
     setSizeGripEnabled(true);
 
@@ -72,11 +72,11 @@ Area_Record::Area_Record(QWidget *parent) : QDialog(parent)
     layoutBottom->addWidget(btnClose);
     verticalLayout->addWidget(widgetBottom);
 
-    labFps->setText("帧率");
-    labWidth->setText("宽度");
-    labHeight->setText("高度");
-    btnStart->setText("开始");
-    btnClose->setText("关闭");
+    labFps->setText(tr("帧率"));
+    labWidth->setText(tr("宽度"));
+    labHeight->setText(tr("高度"));
+    btnStart->setText(tr("开始"));
+    btnClose->setText(tr("关闭"));
 
     connect(btnStart, SIGNAL(clicked()), this, SLOT(record()));
     connect(txtWidth, SIGNAL(editingFinished()), this, SLOT(resizeForm()));
@@ -103,15 +103,6 @@ Area_Record::Area_Record(QWidget *parent) : QDialog(parent)
     txtHeight->setEnabled(true);
 
     labStatus->setObjectName("labStatus");
-
-//    QStringList qss;
-//    qss.append("QLabel{color:#ffffff;}");
-//    qss.append("#btnClose,#btnIcon{border:none;border-radius:0px;}");
-//    qss.append("#btnClose:hover{background-color:#ff0000;}");
-//    qss.append("#btnClose{border-top-right-radius:5px;}");
-//    qss.append("#labTitle{font:bold 16px;}");
-//    qss.append("#labStatus{font:15px;}");
-//    setStyleSheet(qss.join(""));
 }
 
 void Area_Record::closeAll()
@@ -132,7 +123,7 @@ void Area_Record::record()
             gifWriter = 0;
         }
 
-        fileName = QFileDialog::getSaveFileName(this, "保存", qApp->applicationDirPath() + "/", "视频(*.mkv)");
+        fileName = QFileDialog::getSaveFileName(this, tr("保存"), qApp->applicationDirPath() + "/", "视频(*.mkv)");
         if(fileName.isEmpty())
             return ;
 
@@ -150,8 +141,8 @@ void Area_Record::record()
         }
 
         count = 0;
-        labStatus->setText("开始录制...");
-        btnStart->setText("停止");
+        labStatus->setText(tr("开始录制..."));
+        btnStart->setText(tr("停止"));
 
         timer->setInterval(1000/fps);
         QTimer::singleShot(1000, timer, SLOT(start()));
@@ -165,7 +156,7 @@ void Area_Record::record()
         gifWriter = 0;
 
         labStatus->setText(QString("录制完成 共 %1 帧").arg(count));
-        btnStart->setText("开始");
+        btnStart->setText(tr("开始"));
 
         QDesktopServices::openUrl(QUrl(fileName));
     }

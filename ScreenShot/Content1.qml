@@ -47,7 +47,7 @@ Item {
         }
     }
 
-    Rectangle {
+    Item {
         id: rec2
         width: 250
         height: parent.height
@@ -80,25 +80,25 @@ Item {
                     model: ListModel {
                         id: model
                         ListElement {
-                            text: "全屏截取"
+                            text: qsTr("全屏截取")
                         }
                         ListElement {
-                            text: "矩形截取"
+                            text: qsTr("矩形截取")
                         }
                         ListElement{
-                            text: "不规则截取"
+                            text: qsTr("不规则截取")
                         }
                         ListElement {
-                            text: "活动窗口截取"
+                            text: qsTr("活动窗口截取")
                         }
                         ListElement{
-                            text:"连续截取"
+                            text:qsTr("连续截取")
                         }
                         ListElement{
-                            text:"钉在桌面"
+                            text:qsTr("钉在桌面")
                         }
                         ListElement{
-                            text:"长截图"
+                            text:qsTr("长截图")
                         }
                     }
                 }
@@ -122,7 +122,7 @@ Item {
                 }
                 CheckBox {
                     id: checkBox
-                    text: "点击时"
+                    text: qsTr("点击时")
                     onCheckedChanged: {
                         if (checkBox.checked) {
                             spinBox.enabled = false
@@ -144,10 +144,10 @@ Item {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 CheckBox {
                     id:check_2
-                    text: "隐藏当前窗口"
+                    text: qsTr("隐藏当前窗口")
                 }
                 CheckBox {
-                    text: "手动保存或复制后退出"
+                    text: qsTr("手动保存或复制后退出")
                 }
             }
         }
@@ -222,7 +222,7 @@ Item {
         onTriggered: {
             console.log(spinBox.value)
             spinBox.value -= 1
-            if(spinBox.value < 1 && cbb.currentText === "全屏截取"){
+            if(spinBox.value < 1 && cbb.currentText === qsTr("全屏截取")){
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -232,7 +232,7 @@ Item {
                     capture.startFullScreen()
                 }
 
-            } else if (spinBox.value < 1 && cbb.currentText === "矩形截取") {
+            } else if (spinBox.value < 1 && cbb.currentText === qsTr("矩形截取")) {
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -240,7 +240,7 @@ Item {
                 }else{
                     capture.startRecCapture()
                 }
-            }else if (spinBox.value < 1 && cbb.currentText === "不规则截取") {
+            }else if (spinBox.value < 1 && cbb.currentText === qsTr("不规则截取")) {
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -248,7 +248,7 @@ Item {
                 }else{
                     capture.startFreeCapture()
                 }
-            }else if (spinBox.value < 1 && cbb.currentText === "连续截取") {
+            }else if (spinBox.value < 1 && cbb.currentText === qsTr("连续截取")) {
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -256,7 +256,7 @@ Item {
                 }else{
                     capture.startContinueCapture()
                 }
-            } else if(spinBox.value < 1 && cbb.currentText === "钉在桌面"){
+            } else if(spinBox.value < 1 && cbb.currentText === qsTr("钉在桌面")){
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -264,7 +264,7 @@ Item {
                 }else{
                     capture.startNailCapture()
                 }
-            } else if(spinBox.value < 1 && cbb.currentText === "活动窗口截取"){
+            } else if(spinBox.value < 1 && cbb.currentText === qsTr("活动窗口截取")){
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()
@@ -272,7 +272,7 @@ Item {
                 }else{
                     capture.startActiveCapture()
                 }
-            }else if(spinBox.value < 1 && cbb.currentText === "长截图"){
+            }else if(spinBox.value < 1 && cbb.currentText === qsTr("长截图")){
                 countDown.stop()
                 if(check_2.checked == true){
                     appRoot.hide()

@@ -16,7 +16,7 @@ TEMPLATE = app
 
 #CONFIG += link_pkgconfig
 
-CONFIG += c++11
+CONFIG += c++17
 PKGCONFIG += xcb xcb-util
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -63,7 +63,7 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
-INCLUDEPATH += ../../ffmpeg/include/
+#INCLUDEPATH += ../../ffmpeg/include/
 INCLUDEPATH += $$PWD/src/
 
 #LIBS += -L/usr/lib -lavcodec \
@@ -79,21 +79,21 @@ INCLUDEPATH += /usr/local/include\
                /usr/local/include/opencv4\
                /usr/local/include/opencv4/opencv2
 
-LIBS += -L /usr/local/lib/lib*
+LIBS += -L/usr/lib/
 
 #LIBS += -L/opt/dm/lib/ -ldl -lwebp -lavcodec -lopenjp2 -lpng16 -ljpeg -ltiff -lopencv_core -ltbb -lopencv_calib3d \
-##LIBS += -L/opt/dm/lib/lib  -ldl -lopencv_core \
-# -lopencv_dnn\
-# -lopencv_features2d\
-# -lopencv_flann\
-# -lopencv_highgui\
-# -lopencv_imgcodecs\
-# -lopencv_imgproc\
-# -lopencv_ml\
-# -lopencv_objdetect\
-# -lopencv_photo\
-# -lopencv_stitching\
-# -lopencv_video\
+LIBS += -ldl -lopencv_core \
+ -lopencv_dnn\
+ -lopencv_features2d\
+ -lopencv_flann\
+ -lopencv_highgui\
+ -lopencv_imgcodecs\
+ -lopencv_imgproc\
+ -lopencv_ml\
+ -lopencv_objdetect\
+ -lopencv_photo\
+ -lopencv_stitching\
+ -lopencv_video
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

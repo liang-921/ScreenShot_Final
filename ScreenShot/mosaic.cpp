@@ -13,7 +13,7 @@ Mosaic::Mosaic(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setWindowTitle("马赛克");
+    setWindowTitle(tr("马赛克"));
 
     ui->scrollArea->setWidget(ui->label);
     m_Image.load("/tmp/1.jpg");

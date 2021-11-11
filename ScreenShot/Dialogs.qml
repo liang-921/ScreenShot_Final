@@ -25,53 +25,12 @@ Item {
         nameFilters: [ "Image files (*.png *.jpeg *.jpg)"]
     }
 
-    Dialog{
+
+    MessageDialog{
         id:about
         width: 400
         height: 600
         title: qsTr("About")
-//        contentItem:
-
-//            Column{
-//            Rectangle{
-//                id:rec
-//                width: about.width
-//                height: 80
-//                Row{
-
-//                    spacing: 30
-////                    anchors.horizontalCenter: rec
-//                    Image{
-//                        id:img
-//                        source: "./icons/logo.png"
-//                        height: 60
-//                        width: 60
-//                    }
-//                    Text {
-//                        id: logo
-//                        text: qsTr("麒麟截屏")
-//                        font.pixelSize: 30
-//                    }
-
-//                }
-//            }
-
-//            TabBar {
-//                id: bar
-//                width: about.width
-//                Repeater {
-//                    model: ["First", "Second", "Third", "Fourth"]
-
-//                    TabButton {
-//                        text: modelData
-//                        width: Math.max(100, bar.width / 4)
-////                        background: Rectangle {
-////                            color: "grey"
-////                        }
-//                    }
-//                }
-//            }
-//        }
-
+        text:qsTr("本截图软件由重庆师范大学软件工程系李梦雪、梁淑贞、张宝丹开发。\n")
     }
 }
